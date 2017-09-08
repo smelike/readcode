@@ -117,6 +117,7 @@ if (!$smarty->is_cached('index.dwt', $cache_id))
 
     $smarty->assign('feed_url',        ($_CFG['rewrite'] == 1) ? 'feed.xml' : 'feed.php'); // RSS URL
 
+	//print_r(get_categories_tree());
     $smarty->assign('categories',      get_categories_tree()); // 分类树
     $smarty->assign('helps',           get_shop_help());       // 网店帮助
     $smarty->assign('top_goods',       get_top10());           // 销售排行
