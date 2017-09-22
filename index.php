@@ -15,14 +15,13 @@
 
 define('IN_ECS', true);
 
-//echo dirname(__FILE__) . '/includes/init.php';
-
 require(dirname(__FILE__) . '/includes/init.php');
 
 if ((DEBUG_MODE & 2) != 2)
 {
-    $smarty->caching = true;
+    $smarty->caching = false;
 }
+
 
 $ua = strtolower($_SERVER['HTTP_USER_AGENT']);
 
@@ -106,7 +105,10 @@ if (!$smarty->is_cached('index.dwt', $cache_id))
 {
     assign_template();
 
+	
     $position = assign_ur_here();
+	// 添加 index.css 文件
+	$smarty->assign('index_css_path', 'css/index.css');
     $smarty->assign('page_title',      $position['title']);    // 页面标题
     $smarty->assign('ur_here',         $position['ur_here']);  // 当前位置
 
@@ -161,11 +163,12 @@ if (!$smarty->is_cached('index.dwt', $cache_id))
         }
         $smarty->assign('cat_rec', $cat_rec);
     }
+	//print_r($smarty);
+	//exit;
 
     /* 页面中的动态内容 */
     assign_dynamic('index');
 }
-
 
 $smarty->display('index.dwt', $cache_id);
 
