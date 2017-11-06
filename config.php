@@ -71,7 +71,7 @@ return [
     'action_suffix'          => '',
     // 自动搜索控制器
     'controller_auto_search' => false,
-	
+
     // +----------------------------------------------------------------------
     // | URL设置
     // +----------------------------------------------------------------------
@@ -137,20 +137,16 @@ return [
         // 标签库标签开始标记
         'taglib_begin' => '{',
         // 标签库标签结束标记
-        'taglib_end'   => '}',	
-		//
-		'layout_on'              =>true,
-		//
-		'layout_name'            =>'layout',
+        'taglib_end'   => '}',
+		'layout_on' => false,
+		'layout_name' => 'layout'
     ],
-
 
     // 视图输出字符串内容替换
     'view_replace_str'       => [],
     // 默认跳转页面对应的模板文件
     'dispatch_success_tmpl'  => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
     'dispatch_error_tmpl'    => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
-
 
     // +----------------------------------------------------------------------
     // | 异常及错误设置
