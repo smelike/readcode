@@ -1,4 +1,6 @@
-if($user_name==''){
+<?php
+
+	if($user_name==''){
 		echo '请输入用户名';
 		exit;
 	}
@@ -29,11 +31,12 @@ if($user_name==''){
 	$email='1909970983@qq.com';
 	$pattern="/([a-z0-9]*[-_.]?[a-z0-9]+)*@([a-z0-9]*[-_]?[a-z0-9]+)+[.][a-z]{2,3}([.][a-z]{2})?/i";
 	if(preg_match($pattern,$email)){
-    echo ' ';
+    		echo ' ';
 	} else{
-    echo '邮箱格式错误！';
-	exit;
+    		echo '邮箱格式错误！';
+		exit;
 	}
+
 	if($indent ==''){
 		echo '请输入验证码';
 	}
@@ -45,10 +48,7 @@ if($user_name==''){
 	if($indent ==$_SESSION['code']){
 		echo '';
 	}
-	
-	
-	
-	
+		
 	
 	if($number==''){
 		echo '请输入正确的手机号码';
@@ -57,11 +57,11 @@ if($user_name==''){
 	
 	if(preg_match("/1[3458]{1}\d{9}$/",$number)){  
    
-     echo "";  
+     		echo "";  
    
 	}else{  
    
-	echo "您输入的手机号码不正确";  
+		echo "您输入的手机号码不正确";  
    
 	}
 	
